@@ -1,6 +1,6 @@
 {
-    "name": "conarwelsh/mustache",
-    "description": "",
+    "name": "conarwelsh/mustache-l4",
+    "description": "A Mustache.php wrapper for Laravel 4",
     "authors": [
         {
             "name": "Conar Welsh",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Conarwelsh\\Mustache": "src/"
+            "Conarwelsh\\MustacheL4": "src/"
         }
     },
     "minimum-stability": "dev"

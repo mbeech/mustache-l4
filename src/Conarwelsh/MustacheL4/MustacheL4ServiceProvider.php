@@ -1,8 +1,8 @@
-<?php namespace Conarwelsh\Mustache;
+<?php namespace Conarwelsh\MustacheL4;
 
 use Illuminate\Support\ServiceProvider;
 
-class MustacheServiceProvider extends ServiceProvider {
+class MustacheL4ServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +18,7 @@ class MustacheServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->package('conarwelsh/mustache');
+		$this->package('conarwelsh/mustache-l4');
 
 		$app = $this->app;
 
@@ -26,7 +26,7 @@ class MustacheServiceProvider extends ServiceProvider {
 		{
 			$resolver->register('mustache', function() use($app)
 			{
-				return $app->make('Conarwelsh\Mustache\MustacheEngine');
+				return $app->make('Conarwelsh\MustacheL4\MustacheEngine');
 			});
 			return $resolver;
 		});
@@ -45,7 +45,7 @@ class MustacheServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('mustache');
+		return array('mustache-l4');
 	}
 
 }

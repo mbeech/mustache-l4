@@ -1,5 +1,5 @@
 <?php
-namespace Conarwelsh\Mustache;
+namespace Conarwelsh\MustacheL4;
 
 use Mustache_Loader;
 use Illuminate\Filesystem\Filesystem;

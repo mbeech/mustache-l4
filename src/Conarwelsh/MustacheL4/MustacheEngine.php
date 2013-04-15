@@ -1,5 +1,5 @@
 <?php
-namespace Conarwelsh\Mustache;
+namespace Conarwelsh\MustacheL4;
 
 use Illuminate\View\Engines\EngineInterface;
 use Illuminate\Filesystem\Filesystem;
@@ -16,7 +16,7 @@ class MustacheEngine implements EngineInterface {
 	{
 		$view = $this->files->get($path);
 		$app = app();
-		$m = new Mustache_Engine( $app['config']->get('mustache::config') );
+		$m = new Mustache_Engine( $app['config']->get('mustache-l4::config') );
 
 		$data = array_map(function($item){
 			return method_exists($item, 'toArray') ? $item->toArray() : $item;
