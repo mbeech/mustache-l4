@@ -1,0 +1,21 @@
+{
+    "name": "conarwelsh/mustache",
+    "description": "",
+    "authors": [
+        {
+            "name": "Conar Welsh",
+            "email": "conar@welshlabs.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "mustache/mustache": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Conarwelsh\\Mustache": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
