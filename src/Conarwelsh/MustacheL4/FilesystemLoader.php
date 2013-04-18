@@ -18,8 +18,8 @@ class FilesystemLoader implements Mustache_loader {
 	public function load($name)
 	{
 		if (!isset($this->templates[$name])) {
-            $this->templates[$name] = $this->loadFile($name);
-        }
+			$this->templates[$name] = $this->loadFile($name);
+		}
         return $this->templates[$name];
 	}
 
