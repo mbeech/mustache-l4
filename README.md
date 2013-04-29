@@ -5,11 +5,13 @@ A Mustache.php wrapper for Laravel 4
 
 # Install
 Add mustache-l4 as a dependency to your `composer.json` file
-	
-	"require": {
-		"laravel/framework": "4.0.*",
-		"conarwelsh/mustache-l4": "dev-master"
-	}
+
+```json
+"require": {
+	"laravel/framework": "4.0.*",
+	"conarwelsh/mustache-l4": "dev-master"
+}
+```
 	
 run `composer update`, or `composer install` if this is a brand new project
 	
@@ -17,11 +19,13 @@ Add the Service Provider
 
 app/config/app.php
 
-	...
+```php
+...
+
+'Conarwelsh\MustacheL4\MustacheL4ServiceProvider',
 	
-	'Conarwelsh\MustacheL4\MustacheL4ServiceProvider',
-	
-	...
+...
+```
 
 You are all setup!
 
@@ -37,17 +41,21 @@ The Laravel View class will choose the right templating engine to use based on t
 You can even mix and match template engines.  For instance maybe you have a Blade layout file, and you want to nest a Mustache view, thats fine!  However just be aware of the fact that Mustache does not understand Block Sections like Blade does.
 The Mustache view will be rendered into a variable named whatever section you passed the view to.  So for example if you were to do:
 
-	$this->layout->nest('content', 'some.view');
-	$this->layout->nest('sidebar', 'some.sidebar');
-	
+```php
+$this->layout->nest('content', 'some.view');
+$this->layout->nest('sidebar', 'some.sidebar');
+```
+
 The contents of the parsed `some.view` file will be available in the template file under a variable called `$content`.
 The contents of the parsed `some.sidebar` would be availble in the template file, under a variable called `$sidebar`.
 
 By default, Mustache partials are also loaded using Laravel's ViewFinder, so you can feel free to use dot-notation to specify a view.
 
-	{{#posts}}
-		{{> posts._post}}
-	{{/posts}}
+```html
+{{#posts}}
+	{{> posts._post}}
+{{/posts}}
+```
 
 Other than that it is business as usual!
 
