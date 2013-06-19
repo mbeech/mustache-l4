@@ -17,11 +17,7 @@ class MustacheEngine implements EngineInterface {
 		$view = $this->files->get($path);
 		$app = app();
 		$m = new Mustache_Engine( $app['config']->get('mustache-l4::config') );
-
-		$data = array_map(function($item){
-			return method_exists($item, 'toArray') ? $item->toArray() : $item;
-		}, $data);
-		 
+ 
 		return $m->render($view, $data);
 	}
 
